@@ -1,0 +1,417 @@
+/* Classic Casino Theme Variables */
+:root {
+    --bg-color: #f0f0f0;
+    --text-color: #000000;
+    --primary-color: #3498db;
+    --secondary-color: #d4af37;
+    --accent-color: #e74c3c;
+    --card-bg: #fff;
+    --felt-green: #591515;
+    --dark-wood: #591515;
+    --gold: #d4af37;
+    --cream: #f2d7ab;
+    --red: #b22222;
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.game-container {
+    width: 100%;
+    max-width: 500px;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    background-color: var(--primary-color);
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+main {
+    padding: 20px;
+}
+
+.dealer-area, .player-area {
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.card {
+    width: 60px;
+    height: 90px;
+    background-color: var(--card-bg);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.message {
+    text-align: center;
+    font-size: 1.2rem;
+    min-height: 1.5em;
+    margin: 10px 0;
+    color: var(--accent-color);
+}
+
+.controls {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.betting-controls, .game-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    color: var(--cream)
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--gold);
+    color: var(--dark-wood);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #c19b2a;
+    transform: scale(1.05);
+}
+
+button:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+}
+
+/* Table Layout */
+.table-area {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    position: relative;
+}
+
+.poker-table {
+    width: 100%;
+    max-width: 800px;
+    height: 400px;
+    background-color: var(--felt-green);
+    border-radius: 200px;
+    border: 20px solid var(--dark-wood);
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0 0 50px rgba(0,0,0,0.5),
+                0 10px 20px rgba(0,0,0,0.3);
+}
+
+.table-felt-design {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 60%;
+    border: 2px solid rgba(89, 44, 44, 0.195);
+    border-radius: 100px;
+}
+
+.dealer-section, .player-section {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.dealer-section {
+    top: 20px;
+}
+
+.player-section {
+    bottom: 20px;
+}
+
+.cards-area {
+    display: flex;
+    gap: 10px;
+    min-height: 150px;
+    align-items: center;
+    perspective: 1000px;
+}
+
+.position-label {
+    color: var(--cream);
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: var(--dark-felt);
+    padding: 5px 15px;
+    border-radius: 3px;
+    border: 1px solid var(--gold);
+    margin: 10px 0;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .game-container {
+        max-width: 700px;
+    }
+
+    .card {
+        width: 70px;
+        height: 105px;
+    }
+}
+
+@media (max-width: 768px) {
+    .poker-table {
+        height: 300px;
+        border-radius: 150px;
+    }
+    
+    .table-felt-design {
+        width: 90%;
+        height: 70%;
+        border-radius: 75px;
+    }
+    
+    .dealer-section {
+        top: 10px;
+    }
+    
+    .player-section {
+        bottom: 10px;
+    }
+    
+    .card {
+        width: 60px;
+        height: 84px;
+    }
+    
+    .position-label {
+        font-size: 1rem;
+        padding: 3px 10px;
+    }
+}
+
+.start-screen, .game-container {
+    width: 100%;
+    max-width: 800px;
+    background-color: var(--felt-green);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.start-screen {
+    padding: 40px;
+}
+
+.start-screen h1 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    color: var(--gold);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+#startButton {
+    font-size: 1.5rem;
+    padding: 15px 30px;
+    background-color: var(--gold);
+    color: var(--dark-wood);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#startButton:hover {
+    background-color: #c19b2a;
+    transform: scale(1.05);
+}
+
+header {
+    background-color: var(--dark-wood);
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.player-info {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: var(--cream);
+}
+
+.poker-table {
+    position: relative;
+    padding: 40px 20px;
+    border-radius: 100px;
+    border: 20px solid var(--dark-wood);
+    overflow: hidden;
+}
+
+.felt-design {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 60%;
+    border: 2px solid rgba(255,255,255,0.1);
+    border-radius: 100px;
+}
+
+.dealer-area, .player-area {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--gold);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.card {
+    width: 70px;
+    height: 100px;
+    background-color: var(--cream);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.message {
+    font-size: 1.2rem;
+    min-height: 1.5em;
+    margin: 20px 0;
+    color: var(--gold);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.controls {
+    padding: 20px;
+    background-color: var(--dark-wood);
+}
+
+.betting-controls, .game-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--gold);
+    color: var(--dark-wood);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #c19b2a;
+    transform: scale(1.05);
+}
+
+button:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+    .poker-table {
+        border-width: 10px;
+        border-radius: 50px;
+        padding: 20px 10px;
+    }
+
+    .felt-design {
+        width: 90%;
+        height: 70%;
+        border-radius: 50px;
+    }
+
+    .card {
+        width: 60px;
+        height: 85px;
+        font-size: 1.2rem;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}

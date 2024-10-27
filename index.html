@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classic Casino Blackjack</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="startScreen" class="start-screen">
+        <h1>Classic Casino Blackjack</h1>
+        <button id="startButton">Start Game</button>
+    </div>
+    <div id="gameScreen" class="game-container" style="display: none;">
+        <header>
+            <h1>Blackjack</h1>
+            <div class="player-info">
+                <span>Balance: $<span id="playerMoney">1000</span></span>
+            </div>
+        </header>
+        
+        <main class="poker-table">
+            <div class="felt-design"></div>
+            <div class="dealer-area">
+                <h2>Dealer <span id="dealerScore"></span></h2>
+                <div id="dealerCards" class="cards"></div>
+            </div>
+            
+            <div class="player-area">
+                <h2>Player <span id="playerScore"></span></h2>
+                <div id="playerCards" class="cards"></div>
+            </div>
+        </main>
+        
+        <div id="message" class="message"></div>
+        
+        <div class="controls">
+            <div id="bettingControls" class="betting-controls">
+                <button id="decreaseBet">-</button>
+                <span>Bet: $<span id="currentBet">0</span></span>
+                <button id="increaseBet">+</button>
+                <button id="dealBtn">Deal</button>
+            </div>
+            <div id="gameControls" class="game-controls">
+                <button id="hitBtn">Hit</button>
+                <button id="standBtn">Stand</button>
+                <button id="doubleBtn">Double</button>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
